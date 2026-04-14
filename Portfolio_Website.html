@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link rel="stylesheet" href="Portfolio_Website.css">
+
+</head>
+<body>
+
+<!-- Progress Bar -->
+<div id="progress"></div>
+
+<!-- Cursor -->
+<div id="cursor"></div>
+<div id="cursor-trail"></div>
+
+<!-- Background -->
+<div class="bg-grid"></div>
+<div class="bg-orb orb1"></div>
+<div class="bg-orb orb2"></div>
+<div class="bg-orb orb3"></div>
+<div class="particles-container" id="particles"></div>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close-menu" onclick="toggleMenu()">×</button>
+  <a href="#about" onclick="toggleMenu()">About</a>
+  <a href="#skills" onclick="toggleMenu()">Skills</a>
+  <a href="#projects" onclick="toggleMenu()">Projects</a>
+  <a href="#certificates" onclick="toggleMenu()">Certificates</a>
+  <a href="#contact" onclick="toggleMenu()">Contact</a>
+</div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-logo">&lt;LordXayah /&gt;</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#certificates">Certs</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme"></button>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid">
+    <div class="hero-left">
+      <div class="hero-badge">
+        <span>Available for internship &amp; projects</span>
+      </div>
+      <h1 class="hero-name">
+        Hi, I'm <span>Isaiah Rey</span>
+      </h1>
+      <p class="hero-title" id="typingText"></p>
+      <p class="hero-desc">
+        Detail-oriented and motivated IT student with hands-on experience in front-end development and UI/UX design.
+         Proven ability to contribute to collaborative teams in building practical, user-centered web and mobile solutions.
+          Eager to apply a strong technical and design skillset to support innovative software development projects.
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn-primary"><i class="fas fa-rocket"></i> View Projects</a>
+        <a href="#contact" class="btn-secondary"><i class="fas fa-paper-plane"></i> Get in Touch</a>
+      </div>
+      <div class="stats-row">
+        <div class="stat"><div class="stat-num" data-count="1">0</div><div class="stat-label">Projects</div></div>
+        <div class="stat"><div class="stat-num" data-count="5">0</div><div class="stat-label">Certifications</div></div>
+        <div class="stat"><div class="stat-num" data-count="10">0</div><div class="stat-label">Technologies</div></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="avatar-container">
+        <div class="avatar-ring"></div>
+        <div class="avatar-ring2"></div>
+        <div class="avatar-core">
+          <img src="C:\Users\acer\Desktop\Personal Files\Images/Carino, Isaiah Rey.jpg" alt="Isaiah" width="500" height="400">
+         
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <span>SCROLL</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="reveal">
+      <div class="about-img-wrapper">
+        <div class="about-img"> 
+          <img src="C:\Users\acer\Desktop\Personal Files\Images/Carino, Isaiah Rey.jpg" alt="Isaiah" width="500" height="500">
+        </div>
+        <div class="about-img-badge">
+          <strong>BSIT</strong>
+          <p>2nd Year Student</p>
+        </div>
+      </div>
+    </div>
+    <div class="reveal" style="transition-delay:0.15s">
+      <div class="section-label">About Me</div>
+      <h2 class="section-title">Crafting Digital <span class="gradient-text">Experiences</span></h2>
+      <div class="section-line"></div>
+      <div class="about-info">
+        <p>I'm an Information Technology student with a deep passion for software development, web technologies, and building intuitive user experiences. My journey in tech started with curiosity about how things work and evolved into a relentless pursuit of creating elegant solutions.</p>
+        <p>I specialize in full-stack web development, exploring areas like database management, networking fundamentals, and system analysis. I thrive in collaborative environments and am always eager to learn emerging technologies.</p>
+      </div>
+      <div class="about-tags">
+        <span class="about-tag">🎓 BSIT Student</span>
+        <span class="about-tag">💻 Full-Stack Dev</span>
+        <span class="about-tag">🌐 Web Dev</span>
+        <span class="about-tag">📱 Mobile Dev</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" style="max-width:1200px;margin:0 auto;padding:5rem 4rem;">
+  <div class="skills-header reveal">
+    <div class="section-label">Tech Arsenal</div>
+    <h2 class="section-title">Skills &amp; <span class="gradient2-text">Technologies</span></h2>
+    <p class="section-sub" style="margin:0 auto 3rem;">A curated stack of tools and technologies I work with to build modern digital solutions.</p>
+  </div>
+  <div class="skills-grid" id="skillsGrid"></div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" style="max-width:1200px;margin:0 auto;padding:5rem 4rem;">
+  <div class="reveal">
+    <div class="section-label">Work</div>
+    <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+    <p class="section-sub">Real-world applications and experiments that showcase my problem-solving approach and technical skills.</p>
+  </div>
+  <div class="projects-grid reveal" style="transition-delay:0.2s" id="projectsGrid"></div>
+</section>
+
+<!-- CERTIFICATES -->
+<section id="certificates" style="max-width:1200px;margin:0 auto;padding:5rem 4rem;">
+  <div class="reveal">
+    <div class="section-label">Credentials</div>
+    <h2 class="section-title">Certificates &amp; <span class="gradient2-text">Achievements</span></h2>
+    <p class="section-sub">Recognized learning milestones.</p>
+  </div>
+  <div class="certs-grid reveal" style="transition-delay:0.2s" id="certsGrid"></div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="max-width:1200px;margin:0 auto;padding:5rem 4rem;">
+  <div class="contact-inner reveal">
+    <div class="section-label" style="justify-content:center;"><span style="display:inline-block;width:32px;height:1px;background:var(--accent);"></span>Contact</div>
+    <h2 class="section-title">Let's <span class="gradient-text">Connect</span></h2>
+    <p class="section-sub" style="margin:0 auto 1.5rem;">Open to collaboration, internship opportunities, and exciting tech discussions. Reach out anytime!</p>
+    <a href="mailto:your@email.com" class="contact-email">
+      <i class="fas fa-envelope"></i> isaiahcarinorey@email.com
+    </a>
+    <div class="contact-links">
+      <a href="https://github.com/LordXayah" class="contact-link"><i class="fab fa-github"></i> GitHub</a>
+      <a href="https://www.linkedin.com/in/isaiah-rey-cari%C3%B1o-995055361/" class="contact-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a href="https://www.facebook.com/carino.isaiahrey" class="contact-link"><i class="fab fa-facebook"></i> Facebook</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>Designed &amp; built by <span>LordXayah</span> · Information Technology Student · <span>2026</span></p>
+</footer>
+
+<script src="Portfolio_Website.js"></script>
+</body>
+</html>
