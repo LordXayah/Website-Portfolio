@@ -1,209 +1,240 @@
-/* ============ DATA ============ */
-const skills = [
-  { name: 'HTML5', icon: '🌐', level: 90, color: '#E34F26' },
-  { name: 'CSS3', icon: '🎨', level: 85, color: '#1572B6' },
-  { name: 'JavaScript', icon: '⚡', level: 60, color: '#F7DF1E' },
-  { name: 'Java', icon: '☕', level: 70, color: '#ED8B00' },
-  { name: 'PHP', icon: '🐘', level: 10, color: '#777BB4' },
-  { name: 'MySQL', icon: '🗄️', level: 20, color: '#4479A1' },
-  { name: 'React', icon: '⚛️', level: 30, color: '#61DAFB' },
-  { name: 'Node.js', icon: '🟢', level: 40, color: '#339933' },
-  { name: 'Git', icon: '🔀', level: 60, color: '#F05032' },
-  { name: 'MongoDB', icon: '🍃', level: 40, color: '#47A248' },
-  { name: 'Figma', icon: '✏️', level: 50, color: '#F24E1E' },
-
+/* ============ RE-STRUCTURED INVENTORY DATA ============ */
+const skillsData = [
+  { group: "Front-End Development", tags: ["HTML", "CSS", "JavaScript"] },
+  { group: "Back-End Development", tags: ["Java", "MongoDB", "SQL", "PHP", "Node.js", "MySQL"] },
+  { group: "UI/UX & Design", tags: ["Figma", "Photoshop","Canva"] },
+  { group: "Mobile Development", tags: ["Android Studio", "React Native"] },
+  { group: "Video & Content Editing", tags: ["CapCut", "Color Grading", "Motion Graphics", "Audio Cleanup"] },
+  { group: "Professional Stack", tags: ["Business Analysis", "Social Media Mgmt", "Team Collaboration", "Excel / Sheets"] }
 ];
 
-const projects = [
-  {
-    icon: '🛒', gradient: 'linear-gradient(135deg,#667eea,#764ba2)',
-    tags: [{ label: 'Web App', cls: 'tag-blue' }, { label: 'Full-Stack', cls: 'tag-purple' }],
-    title: 'SAMCIS Marketplace',
-    desc: 'Developing an e-commerce with my team for the students and faculties only of the Saint Louis University Maryheights Campuse',
-    stack: ['React', 'Node.js', 'MongoDB', 'Java', 'TypeScript','CSS', 'JavaScript'],
-    github: '#', demo: '#', 
-  }
+const projectsData = [
+  { num: "01", date: "May 2026", name: "Wordy Game", role: "Back-end & Front-end Developer", desc: "A competitive word-formation game built with Java and MySQL. Players form words from random letters to beat their opponent, with user authentication, score tracking, and a dynamic dictionary powered by a MySQL database.", stack: ["Java", "MySQL"] },
+  { num: "02", date: "Jan 2026 – April 2026", name: "Lost & Found System", role: "Back-end & Front-end Developer", desc: "A Java-based system for Saint Louis University's OSA that digitizes lost and found item management. It enables logging, searching, and claiming items with persistent data storage using file I/O.A Lost & Found System developed for the Saint Louis University Maryheights Campus ", stack: ["Java"] },
+  { num: "03", date: "Sept 2025 – Feb 2026", name: "SAMCIS Marketplace", role: "Business Analyst · Front-end Developer", desc: "A student and faculty-restricted e-commerce platform developed for the Saint Louis University Maryheights Campus. Aligned technical criteria with consumer requirements through business analysis matrices, and contributed to interface assembly in a team infrastructure[cite: 3, 4].", stack: ["React", "Node.js", "MongoDB", "Java", "Business Analysis"] },
+  { num: "04", date: "May 2025", name: "ReserveIT", role: "Android Developer", desc: "An open-laboratory reservation and scheduling environment application built with Android Studio for Saint Louis University. Streamlines operations and minimizes double-booking criteria .", stack: ["Android Studio", "Java", "Mobile Dev"] },
+  { num: "05", date: "Dec 2024", name: "Ride Revamp", role: "Front-end Developer", desc: "A web platform connecting consumers handling faulty vehicle assemblies with the closest mechanics. Features a user-friendly custom booking dynamic.", stack: ["HTML", "CSS", "JavaScript"] },
+  { num: "06", date: "Jan 2024", name: "School Website", role: "Front-end Developer", desc: "A crisp structural informational landing site project highlighting clean semantic architecture layout configurations.", stack: ["HTML", "CSS", "Web Design"] }
 ];
 
-const certs = [
-  { icon: '🏅', title: ' PowerPoint Presentation (Prototype Website Hyperlink) ', issuer: 'Rosales National High School - ICT', date: '2024', verified: true },
-  { icon: '🏅', title: 'Web Designing', issuer: 'Rosales National High School - ICT', date: '2024', verified: true },
-  { icon: '🏅', title: 'Photoshop Designing', issuer: 'Rosales National High School - ICT', date: '2024', verified: true },
-  { icon: '🏅', title: 'Best in Video Editing', issuer: 'Rosales National High School - ICT', date: '2024', verified: true },
-  { icon: '🏅', title: 'Photoshop Designing', issuer: 'Rosales National High School - ICT', date: '2023', verified: true },
-  ];
+const experienceData = [
+  { period: "Jan 2026 – May 2026", name: "Social Media Manager", org: "Freelance / Remote", bullets: ["Managed multiple production YouTube vectors — processing assets, micro-scheduling, and handling thumbnail graphics", "Evaluated account growth metrics and delivery output using custom spreadsheets", "Coordinated dynamic calendar queues to maximize subscriber retention pipelines"] },
+  { period: "Sept 2024 – Jan 2025", name: "Video Editor", org: "Freelance / Remote", bullets: ["Processed cinematic short clips, YouTube series assets, motivational shorts, and podcasts from raw timelines", "Polished visual elements via custom color grading layouts, audio scrubbing, and tracking typography layers", "Generated delivery parameters optimized specifically for diverse target hosting configurations"] },
+  { period: "May 2022 – May 2023", name: "CapCut Content Creator", org: "Self-Directed", bullets: ["Grew an organic short-form asset profile to nearly 100,000 subscribers inside a single year deployment", "Curated text synchronizations and atmospheric filters matching strict user intent metrics", "Audited algorithmic trend shifts to sustain top-tier visibility cycles"] }
+];
 
-/* ============ RENDER SKILLS ============ */
-const sg = document.getElementById('skillsGrid');
-skills.forEach((s, i) => {
-  sg.innerHTML += `
-    <div class="skill-card reveal" style="transition-delay:${i * 0.05}s">
-      <span class="skill-icon">${s.icon}</span>
-      <div class="skill-name">${s.name}</div>
-      <div class="skill-level"><div class="skill-level-fill" data-level="${s.level}"></div></div>
-    </div>`;
-});
+const servicesData = [
+  { icon: "🎥", title: "Video Editing", desc: "High-impact short-form and high-fidelity long-form video editing.", features: ["Color Grading Correction", "Animation & Transition"] },
+  { icon: "💻", title: "Web Development", desc: "Responsive front-end rendering layouts and structural back-end configurations built for fast, semantic terminal operations.", features: ["Dynamic Responsive Interfaces", "API Configuration Paths", "Secure Database Schemes"] },
+  { icon: "📈", title: "Social Media Management", desc: "End-to-end multi-platform channel scaling, metric reporting, thumbnail configurations, and custom calendar content lifecycle development.", features: ["Content Lifecycle Mapping", "Performance Metrics Auditing"] }
+];
 
-/* ============ RENDER PROJECTS ============ */
-const pg = document.getElementById('projectsGrid');
-projects.forEach((p, i) => {
-  const tags = p.tags.map(t => `<span class="project-tag ${t.cls}">${t.label}</span>`).join('');
-  const stack = p.stack.map(s => `<span class="stack-badge">${s}</span>`).join('');
-  pg.innerHTML += `
-    <div class="project-card reveal" style="transition-delay:${i * 0.1}s">
-      <div class="project-thumb">
-        <div class="project-thumb-bg" style="background:${p.gradient}; position:absolute;inset:0;"></div>
-        <div class="project-thumb-dots"></div>
-        <div class="project-tag-row">${tags}</div>
-        <div class="project-thumb-icon">${p.icon}</div>
-      </div>
-      <div class="project-body">
-        <div class="project-title">${p.title}</div>
-        <div class="project-desc">${p.desc}</div>
-        <div class="project-stack">${stack}</div>
-        <div class="project-links">
-          <a href="${p.github}" class="project-link"><i class="fab fa-github"></i> Source</a>
-          <a href="${p.demo}" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+const certsData = [
+  { title: "AI Ready ASEAN Youth Challenge", issuer: "Certificate of Appreciation", date: "May 2026", icon: "🏅" },
+  { title: "Best in Video Editing", issuer: "Rosales National High School — ICT Achievement", date: "May 2024", icon: "🏆" },
+  { title: "PowerPoint Prototype Website Hyperlink Setup", issuer: "RNHS ICT — 5th Place Ribbon", date: "Feb 2024 ", icon: "🥈" },
+  { title: "Web Designing Competition", issuer: "Rosales National High School — Entry Portfolio", date: "Feb 2024", icon: "📜" },
+  { title: "Photoshop Designing Assembly", issuer: "RNHS ICT Competition Entry", date: "Feb 2024", icon: "📜" }
+];
+
+/* ============ DYNAMIC INTERFACE ASSEMBLER ============ */
+document.addEventListener("DOMContentLoaded", () => {
+  
+  // 1. Generate Skills Inventory Modules
+  const skGrid = document.getElementById("skillsGrid");
+  skillsData.forEach(sk => {
+    const pills = sk.tags.map(t => `<span class="skill-pill">${t}</span>`).join('');
+    skGrid.innerHTML += `
+      <div class="skill-card reveal">
+        <div class="skill-group-title">${sk.group}</div>
+        <div class="skill-tags-container">${pills}</div>
+      </div>`;
+  });
+
+  // 2. Generate Project Grid Display Elements
+  const projGrid = document.getElementById("projectsGrid");
+  projectsData.forEach(p => {
+    const stackHTML = p.stack.map(s => `<span class="stack-badge">${s}</span>`).join('');
+    projGrid.innerHTML += `
+      <div class="project-card reveal">
+        <div class="project-thumb">
+          <div class="project-thumb-bg"></div>
+          <div class="project-thumb-dots"></div>
+          <span class="project-num-marker">${p.num}</span>
+          <span class="project-date-badge">${p.date}</span>
         </div>
-      </div>
-    </div>`;
-});
+        <div class="project-body">
+          <div class="project-title">${p.name}</div>
+          <div class="project-role">${p.role}</div>
+          <p class="project-desc">${p.desc}</p>
+          <div class="project-stack">${stackHTML}</div>
+        </div>
+      </div>`;
+  });
 
-/* ============ RENDER CERTS ============ */
-const cg = document.getElementById('certsGrid');
-certs.forEach((c, i) => {
-  cg.innerHTML += `
-    <div class="cert-card reveal" style="transition-delay:${i * 0.08}s">
-      <div class="cert-icon">${c.icon}</div>
-      <div class="cert-info">
-        <div class="cert-title">${c.title}</div>
-        <div class="cert-issuer">${c.issuer}</div>
-        <div class="cert-date">📅 ${c.date}</div>
-        ${c.verified ? '<div class="cert-verify"><i class="fas fa-check-circle"></i> Verified</div>' : ''}
-      </div>
-    </div>`;
-});
+  // 3. Generate Timeline Sequence
+  const timelineGrid = document.getElementById("experienceTimeline");
+  experienceData.forEach(e => {
+    const bulletsHTML = e.bullets.map(b => `<li>${b}</li>`).join('');
+    timelineGrid.innerHTML += `
+      <div class="timeline-item reveal">
+        <div class="time-period">${e.period.replace(" – ", "<br>– ")}</div>
+        <div class="time-content">
+          <h3>${e.name}</h3>
+          <div class="time-org">${e.org}</div>
+          <ul class="time-bullets">${bulletsHTML}</ul>
+        </div>
+      </div>`;
+  });
 
-/* ============ TYPING EFFECT ============ */
-const phrases = ['Full-Stack Developer', 'UI/UX Enthusiast', 'Problem Solver', 'Network Engineer', 'Database Designer', 'Creative Coder'];
-let pi = 0, ci = 0, del = false;
-const el = document.getElementById('typingText');
-function type() {
-  const phrase = phrases[pi];
-  if (!del) {
-    el.innerHTML = phrase.slice(0, ++ci) + '<span class="type-cursor"> </span>';
-    if (ci === phrase.length) { del = true; setTimeout(type, 1800); return; }
-  } else {
-    el.innerHTML = phrase.slice(0, --ci) + '<span class="type-cursor"> </span>';
-    if (ci === 0) { del = false; pi = (pi + 1) % phrases.length; }
+  // 4. Generate Professional Service Offerings
+  const srvGrid = document.getElementById("servicesGrid");
+  servicesData.forEach(srv => {
+    const featuresHTML = srv.features.map(f => `<li>${f}</li>`).join('');
+    srvGrid.innerHTML += `
+      <div class="service-card reveal">
+        <div class="service-icon-box">${srv.icon}</div>
+        <h3>${srv.title}</h3>
+        <p>${srv.desc}</p>
+        <ul class="service-bullet-list">${featuresHTML}</ul>
+      </div>`;
+  });
+
+  // 5. Generate Certifications
+  const certsGrid = document.getElementById("certsGrid");
+  certsData.forEach(c => {
+    certsGrid.innerHTML += `
+      <div class="cert-card reveal">
+        <div class="cert-icon">${c.icon}</div>
+        <div class="cert-info">
+          <div class="cert-title">${c.title}</div>
+          <div class="cert-issuer">${c.issuer}</div>
+          <div class="cert-date">📅 ${c.date}</div>
+        </div>
+      </div>`;
+  });
+
+  /* ============ ENGINE TRIGGERS ============ */
+
+  // Setup Automated Metric Aggregators
+  const counters = document.querySelectorAll('[data-count]');
+  counters.forEach(cnt => {
+    const key = cnt.getAttribute('data-count');
+    if (key === 'projects') cnt.setAttribute('data-count', projectsData.length);
+    if (key === 'skills') {
+      const flatCount = skillsData.reduce((acc, curr) => acc + curr.tags.length, 0);
+      cnt.setAttribute('data-count', flatCount);
+    }
+  });
+
+  const countObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const target = +entry.target.dataset.count;
+        let runningTotal = 0;
+        const speedFactor = target > 0 ? Math.max(target / 40, 1) : 0;
+        const intervalTimer = setInterval(() => {
+          runningTotal = Math.min(runningTotal + speedFactor, target);
+          entry.target.textContent = Math.floor(runningTotal) + (target > 5 ? "+" : "");
+          if (runningTotal >= target) clearInterval(intervalTimer);
+        }, 40);
+        countObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.4 });
+  document.querySelectorAll('[data-count]').forEach(c => countObserver.observe(c));
+
+  // Typographic Ticker Node Array Loop
+  const phrases = ['Full-Stack Developer', 'UI/UX Specialist', 'Social Media Manager', 'Video Production Editor', 'Mobile App Engineer'];
+  let currentPhraseIdx = 0, currentLetterIdx = 0, isDeleting = false;
+  const targetTypingElement = document.getElementById('typingText');
+  
+  function typeRoutine() {
+    const fullText = phrases[currentPhraseIdx];
+    if (!isDeleting) {
+      targetTypingElement.innerHTML = fullText.slice(0, ++currentLetterIdx) + '<span class="type-cursor"> </span>';
+      if (currentLetterIdx === fullText.length) { isDeleting = true; setTimeout(typeRoutine, 1800); return; }
+    } else {
+      targetTypingElement.innerHTML = fullText.slice(0, --currentLetterIdx) + '<span class="type-cursor"> </span>';
+      if (currentLetterIdx === 0) { isDeleting = false; currentPhraseIdx = (currentPhraseIdx + 1) % phrases.length; }
+    }
+    setTimeout(typeRoutine, isDeleting ? 50 : 90);
   }
-  setTimeout(type, del ? 60 : 100);
-}
-type();
+  typeRoutine();
 
-/* ============ SCROLL REVEAL ============ */
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-      // Animate skill bars
-      e.target.querySelectorAll('.skill-level-fill').forEach(bar => {
-        bar.style.width = bar.dataset.level + '%';
-      });
-    }
-  });
-}, { threshold: 0.1 });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  // Scroll View Reveal Core Activator 
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.05 });
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+});
 
-/* ============ COUNTER ANIMATION ============ */
-const counters = document.querySelectorAll('[data-count]');
-const cObserver = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      const target = +e.target.dataset.count;
-      let cur = 0;
-      const inc = target / 40;
-      const t = setInterval(() => {
-        cur = Math.min(cur + inc, target);
-        e.target.textContent = Math.floor(cur) + '+';
-        if (cur >= target) clearInterval(t);
-      }, 40);
-      cObserver.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.5 });
-counters.forEach(c => cObserver.observe(c));
-
-/* ============ CURSOR ============ */
+/* ============ VISUAL INTERACTIONS & GLOBAL MOTIONS ============ */
 const cursor = document.getElementById('cursor');
 const trail = document.getElementById('cursor-trail');
-let mx = 0, my = 0, tx = 0, ty = 0;
+let clientX = 0, clientY = 0, trailX = 0, trailY = 0;
+
 document.addEventListener('mousemove', e => {
-  mx = e.clientX; my = e.clientY;
-  cursor.style.left = mx - 6 + 'px';
-  cursor.style.top = my - 6 + 'px';
+  clientX = e.clientX; clientY = e.clientY;
+  cursor.style.left = clientX - 6 + 'px';
+  cursor.style.top = clientY - 6 + 'px';
 });
-function animTrail() {
-  tx += (mx - tx) * 0.12;
-  ty += (my - ty) * 0.12;
-  trail.style.left = tx - 18 + 'px';
-  trail.style.top = ty - 18 + 'px';
-  requestAnimationFrame(animTrail);
+
+function animateTrail() {
+  trailX += (clientX - trailX) * 0.12;
+  trailY += (clientY - trailY) * 0.12;
+  trail.style.left = trailX - 18 + 'px';
+  trail.style.top = trailY - 18 + 'px';
+  requestAnimationFrame(animateTrail);
 }
-animTrail();
-document.querySelectorAll('a,button,.skill-card,.project-card,.cert-card').forEach(el => {
-  el.addEventListener('mouseenter', () => { cursor.style.transform = 'scale(2)'; trail.style.transform = 'scale(0.5)'; });
-  el.addEventListener('mouseleave', () => { cursor.style.transform = 'scale(1)'; trail.style.transform = 'scale(1)'; });
+animateTrail();
+
+// Parallax Ambient Light Trackers
+document.addEventListener('mousemove', e => {
+  const dx = (e.clientX / window.innerWidth - 0.5) * 30;
+  const dy = (e.clientY / window.innerHeight - 0.5) * 30;
+  document.querySelector('.orb1').style.transform = `translate(${dx}px, ${dy}px)`;
+  document.querySelector('.orb2').style.transform = `translate(${-dx}px, ${-dy}px)`;
 });
 
-/* ============ SCROLL PROGRESS ============ */
-const progress = document.getElementById('progress');
+// Dynamic Scroll Trackers 
 window.addEventListener('scroll', () => {
-  const total = document.body.scrollHeight - innerHeight;
-  progress.style.width = (scrollY / total * 100) + '%';
-});
+  const progressLine = document.getElementById('progress');
+  const maxScrollableHeight = document.body.scrollHeight - window.innerHeight;
+  progressLine.style.width = (window.scrollY / maxScrollableHeight * 100) + '%';
+  
+  const navbarElement = document.getElementById('navbar');
+  navbarElement.style.boxShadow = window.scrollY > 50 ? 'var(--shadow)' : 'none';
+}, { passive: true });
 
-/* ============ NAV SCROLL ============ */
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  navbar.style.boxShadow = scrollY > 50 ? 'var(--shadow)' : 'none';
-});
-
-/* ============ THEME ============ */
+// Theme Switching Operations
 function toggleTheme() {
-  const html = document.documentElement;
-  html.dataset.theme = html.dataset.theme === 'dark' ? 'light' : 'dark';
-  localStorage.setItem('theme', html.dataset.theme);
+  const currentMode = document.documentElement.getAttribute('data-theme');
+  const targetMode = currentMode === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', targetMode);
+  localStorage.setItem('irc-theme', targetMode);
 }
-const saved = localStorage.getItem('theme');
-if (saved) document.documentElement.dataset.theme = saved;
+const savedModeSelection = localStorage.getItem('irc-theme');
+if (savedModeSelection) document.documentElement.setAttribute('data-theme', savedModeSelection);
 
-/* ============ MOBILE MENU ============ */
+// Mobile Responsive Navigation Sidebar Sliders
 function toggleMenu() {
   document.getElementById('mobileMenu').classList.toggle('open');
 }
 
-/* ============ PARTICLES ============ */
-const pc = document.getElementById('particles');
-for (let i = 0; i < 25; i++) {
-  const p = document.createElement('div');
-  p.className = 'particle';
+// Particle Canvas Generator Engine
+const dynamicParticleBox = document.getElementById('particles');
+for (let i = 0; i < 20; i++) {
+  const activeParticleNode = document.createElement('div');
+  activeParticleNode.className = 'particle';
   const size = Math.random() * 3 + 1;
-  p.style.cssText = `
+  activeParticleNode.style.cssText = `
     left: ${Math.random() * 100}%;
     width: ${size}px; height: ${size}px;
-    animation-duration: ${Math.random() * 15 + 10}s;
-    animation-delay: ${Math.random() * 15}s;
-    --drift: ${(Math.random() - 0.5) * 200}px;
-    opacity: ${Math.random() * 0.5};
+    animation-duration: ${Math.random() * 12 + 8}s;
+    animation-delay: ${Math.random() * 10}s;
+    --drift: ${(Math.random() - 0.5) * 160}px;
+    opacity: ${Math.random() * 0.4};
   `;
-  pc.appendChild(p);
+  dynamicParticleBox.appendChild(activeParticleNode);
 }
-
-/* ============ PARALLAX ORBS ============ */
-document.addEventListener('mousemove', e => {
-  const x = (e.clientX / innerWidth - 0.5) * 30;
-  const y = (e.clientY / innerHeight - 0.5) * 30;
-  document.querySelector('.orb1').style.transform = `translate(${x}px, ${y}px)`;
-  document.querySelector('.orb2').style.transform = `translate(${-x}px, ${-y}px)`;
-});
